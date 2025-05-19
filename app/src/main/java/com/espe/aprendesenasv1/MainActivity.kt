@@ -41,7 +41,6 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        // Request camera permissions
         if (allPermissionsGranted()) {
             startCamera()
         } else {
@@ -59,9 +58,8 @@ class MainActivity : AppCompatActivity() {
     private fun startCamera() {
         val cameraProviderFuture = ProcessCameraProvider.getInstance(this)
         cameraProviderFuture.addListener(Runnable {
-            // Used to bind the lifecycle of cameras to the lifecycle owner
             val cameraProvider: ProcessCameraProvider = cameraProviderFuture.get()
-            // Preview
+
             val preview = androidx.camera.core.Preview.Builder()
                 .build()
                 .also {
@@ -75,14 +73,12 @@ class MainActivity : AppCompatActivity() {
                 .also {
                     it.setAnalyzer(cameraExecutor, ObjectAnalyzer(graphicOverlay))
                 }
-            // Select back camera as a default
+            // Seleccionar Camara
             val cameraSelector = DEFAULT_FRONT_CAMERA
 
             try {
-                // Unbind use cases before rebinding
                 cameraProvider.unbindAll()
 
-                // Bind use cases to camera
                 cameraProvider.bindToLifecycle(
                     this, cameraSelector, preview, imageAnalyzer
                 )

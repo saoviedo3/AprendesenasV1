@@ -16,7 +16,6 @@ class ObjectAnalyzer(graphicOverlay: GraphicOverlay) : ImageAnalysis.Analyzer {
         .setAssetFilePath("model_meta.tflite")
         .build()
 
-    // Live detection and tracking
     val customObjectDetectorOptions =
         CustomObjectDetectorOptions.Builder(localModel)
             .setDetectorMode(CustomObjectDetectorOptions.STREAM_MODE)
@@ -26,10 +25,7 @@ class ObjectAnalyzer(graphicOverlay: GraphicOverlay) : ImageAnalysis.Analyzer {
             .setMaxPerObjectLabelCount(3)
             .build()
 
-
-
     val objectDetector = ObjectDetection.getClient(customObjectDetectorOptions)
-
 
     val overlay = graphicOverlay
     private val lensFacing = CameraSelector.LENS_FACING_BACK
@@ -64,8 +60,7 @@ class ObjectAnalyzer(graphicOverlay: GraphicOverlay) : ImageAnalysis.Analyzer {
             }
 
             .addOnFailureListener { e ->
-                // Task failed with an exception
-                // ...
+
             }
             .addOnCompleteListener {
                 imageProxy.close()

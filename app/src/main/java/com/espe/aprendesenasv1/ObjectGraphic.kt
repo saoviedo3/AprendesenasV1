@@ -37,8 +37,6 @@ class ObjectGraphic constructor(
     }
 
     override fun draw(canvas: Canvas) {
-        // Decide color based on object tracking ID
-
 
         val colorID =
             if (detectedObject.trackingId == null) 0
@@ -51,7 +49,7 @@ class ObjectGraphic constructor(
 
         for (label in detectedObject.labels) {
 
-            //if(label.text.equals("perro")){
+            //if(label.text.equals("a")){
 
             textWidth = max(textWidth, textPaints[colorID].measureText(label.text))
             textWidth = max(textWidth, textPaints[colorID].measureText(
@@ -65,7 +63,6 @@ class ObjectGraphic constructor(
             )
             yLabelOffset -= 2 * lineHeight
 
-            // Draws the bounding box.
             val rect = RectF(detectedObject.boundingBox)
             val x0 = translateX(rect.left)
             val x1 = translateX(rect.right)
@@ -75,7 +72,6 @@ class ObjectGraphic constructor(
             rect.bottom = translateY(rect.bottom)
             canvas.drawRect(rect, boxPaints[colorID])
 
-            // Draws other object info.
             canvas.drawRect(
                 rect.left - STROKE_WIDTH,
                 rect.top + yLabelOffset,
@@ -92,8 +88,6 @@ class ObjectGraphic constructor(
             )
 
             yLabelOffset += lineHeight
-
-
 
             canvas.drawText(
                 label.text + " (index: " + label.index + ")",
