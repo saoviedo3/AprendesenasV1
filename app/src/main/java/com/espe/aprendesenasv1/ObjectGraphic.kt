@@ -46,7 +46,6 @@ class ObjectGraphic constructor(
         val lineHeight = TEXT_SIZE + STROKE_WIDTH
         var yLabelOffset = -lineHeight
 
-
         for (label in detectedObject.labels) {
 
             //if(label.text.equals("a")){
@@ -108,9 +107,7 @@ class ObjectGraphic constructor(
                 textPaints[colorID]
             )
             yLabelOffset += lineHeight
-
         }
-        //}
     }
 
     companion object {

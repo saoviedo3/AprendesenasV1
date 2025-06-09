@@ -74,7 +74,7 @@ class MainActivity : AppCompatActivity() {
                     it.setAnalyzer(cameraExecutor, ObjectAnalyzer(graphicOverlay))
                 }
             // Seleccionar Camara
-            val cameraSelector = DEFAULT_FRONT_CAMERA
+            val cameraSelector = DEFAULT_BACK_CAMERA
 
             try {
                 cameraProvider.unbindAll()
