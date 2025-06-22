@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:text="Selecciona una letra"
+        android:textAppearance="?attr/textAppearanceHeadline6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <GridLayout
+        android:layout_marginTop="24dp"
+        android:rowCount="1"
+        android:columnCount="2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/btnA"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:text="A" />
+
+        <Button
+            android:id="@+id/btnB"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:text="B" />
+    </GridLayout>
+</LinearLayout>

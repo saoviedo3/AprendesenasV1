@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!-- Ejemplo de contenido -->
+        <TextView
+            android:text="Bienvenido a AprendeSeñas"
+            android:textAppearance="?attr/textAppearanceHeadline5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <ImageView
+            android:layout_marginTop="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:src="@drawable/intro"
+            android:contentDescription="@string/intro_desc"/>
+
+        <TextView
+            android:layout_marginTop="16dp"
+            android:text="Aquí va información sobre la lengua de señas ecuatoriana..."
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+</ScrollView>

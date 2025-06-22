@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">AprendesenasV1</string>
+    <string name="nav_open_drawer">Abrir menú</string>
+    <string name="nav_close_drawer">Cerrar menú</string>
 </resources>

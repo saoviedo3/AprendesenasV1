@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <!-- Home -->
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.espe.aprendesenasv1.ui.HomeFragment"
+        android:label="Inicio"
+        tools:layout="@layout/fragment_home" />
+
+    <!-- Letras -->
+    <fragment
+        android:id="@+id/lettersFragment"
+        android:name="com.espe.aprendesenasv1.ui.LettersFragment"
+        android:label="Letras"
+        tools:layout="@layout/fragment_letters">
+        <action
+            android:id="@+id/action_letters_to_detection"
+            app:destination="@id/detectionFragment" />
+        <argument
+            android:name="sign"
+            app:argType="string" />
+    </fragment>
+
+    <!-- Detección -->
+    <fragment
+        android:id="@+id/detectionFragment"
+        android:name="com.espe.aprendesenasv1.ui.DetectionFragment"
+        android:label="Detección"
+        tools:layout="@layout/fragment_detection">
+        <argument
+            android:name="sign"
+            app:argType="string" />
+    </fragment>
+</navigation>
+
